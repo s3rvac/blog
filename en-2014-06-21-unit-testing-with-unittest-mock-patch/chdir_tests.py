@@ -1,6 +1,6 @@
 """
-    chdir_tests.py
-    ~~~~~~~~~~~~~~
+    chdir_tests
+    ~~~~~~~~~~~
 
     Unit tests for the chdir module.
 
