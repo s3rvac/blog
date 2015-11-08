@@ -16,7 +16,7 @@ while True:
 
     # Check whether a watched file has changed.
     for f, mtime in WATCHED_FILES_MTIMES:
-        if getmtime(f) > mtime:
+        if getmtime(f) != mtime:
             # One of the files has changed, so restart the script.
             print('--> restarting')
             os.execv(__file__, sys.argv)
