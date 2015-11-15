@@ -9,5 +9,5 @@ std::string operator "" _s(const char *str, std::size_t length) {
 
 int main() {
     std::string s1 = "abc\x00xyz";   // s1 contains "abc"
-    std::string s2 = "abc\x00xyz"_s; // s1 contains "abc\x00xyz"
+    std::string s2 = "abc\x00xyz"_s; // s2 contains "abc\x00xyz"
 }
