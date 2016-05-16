@@ -84,7 +84,7 @@ printGraph g = sequence_ $ map putStr [strAt i j | i <- [1..n], j <- [1..n]]
                       (if j == n then "\n" else "")
 
 {-|
-    Prints the selected error mesage on the standard error.
+    Prints the selected error message on the standard error.
 -}
 printError :: String -> IO ()
 printError = hPutStrLn stderr
