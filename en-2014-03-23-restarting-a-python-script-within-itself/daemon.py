@@ -19,4 +19,7 @@ while True:
         if getmtime(f) != mtime:
             # One of the files has changed, so restart the script.
             print('--> restarting')
+            # When running the script via `./daemon.py` (e.g. Linux/Mac OS), use
             os.execv(__file__, sys.argv)
+            # When running the script via `python daemon.py` (e.g. Windows), use
+            # os.execv(sys.executable, ['python'] + sys.argv)
