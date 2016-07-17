@@ -1,0 +1,63 @@
+%
+% Title:    A LaTeX Template For Responses To a Referees' Reports
+% Author:   Petr Zemek <s3rvac@gmail.com>
+% Homepage: https://blog.petrzemek.net/2016/07/17/latex-template-for-responses-to-referees-reports/
+% License:  CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+%
+\documentclass[a4paper,10pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+
+% View
+\setlength{\hoffset}{-1.5cm}
+\setlength{\voffset}{-1.5cm}
+\setlength{\textheight}{23.0cm}
+\setlength{\textwidth}{15.2cm}
+
+% Paragraph formatting (no indentation)
+\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+
+% Environments
+\newenvironment{comment}
+	{\begin{tabular}{|p{\textwidth}}\begin{tt}}
+	{\end{tt}\end{tabular}}
+\newenvironment{response}
+	{\vspace{0.2cm}}
+	{\vspace{0.2cm}}
+
+% Title
+\title{Statement on the Revision of $\langle$Paper ID$\rangle$ \\ Based on the Referees' Report}
+\author{Author1 and Author2 and Author3}
+\date{\today}
+
+% Text
+\begin{document}
+
+\maketitle
+
+\thispagestyle{empty}
+
+This statement concerns our revision of the $\langle$Paper ID$\rangle$ paper,
+entitled ``\emph{$\langle$Paper Title$\rangle$}'', based on the referees' report.
+
+\section*{Comments by Reviewer \#1}
+
+\begin{comment}
+First comment.
+\end{comment}
+
+\begin{response}
+Response to the first comment.
+\end{response}
+
+\begin{comment}
+Second comment.
+\end{comment}
+
+\begin{response}
+Response to the second comment.
+\end{response}
+
+\end{document}
