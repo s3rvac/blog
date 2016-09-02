@@ -1,63 +1,64 @@
-%
 % Title:    A LaTeX Template For Responses To a Referees' Reports
 % Author:   Petr Zemek <s3rvac@gmail.com>
 % Homepage: https://blog.petrzemek.net/2016/07/17/latex-template-for-responses-to-referees-reports/
 % License:  CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
-%
-\documentclass[a4paper,10pt]{article}
+\documentclass[10pt]{article}
 
-% Packages
+% Allow Unicode input (alternatively, you can use XeLaTeX or LuaLaTeX)
 \usepackage[utf8]{inputenc}
 
-% View
-\setlength{\hoffset}{-1.5cm}
-\setlength{\voffset}{-1.5cm}
-\setlength{\textheight}{23.0cm}
-\setlength{\textwidth}{15.2cm}
+\usepackage{microtype,xparse,tcolorbox}
+\newenvironment{reviewer-comment }{}{}
+\tcbuselibrary{skins}
+\tcolorboxenvironment{reviewer-comment }{empty,
+  left = 1em, top = 1ex, bottom = 1ex,
+  borderline west = {2pt} {0pt} {black!20},
+}
+\ExplSyntaxOn
+\NewDocumentEnvironment {response} { +m O{black!20} } {
+  \IfValueT {#1} {
+    \begin{reviewer-comment~}
+      \setlength\parindent{2em}
+      \noindent
+      \ttfamily #1
+    \end{reviewer-comment~}
+  }
+  \par\noindent\ignorespaces
+} { \bigskip\par }
 
-% Paragraph formatting (no indentation)
-\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
-\setlength{\parindent}{0pt}
+\NewDocumentCommand \Reviewer { m } {
+  \section*{Comments~by~Reviewer~\##1}
+}
+\ExplSyntaxOff
+\AtBeginDocument{\maketitle\thispagestyle{empty}\noindent}
 
-% Environments
-\newenvironment{comment}
-	{\begin{tabular}{|p{\textwidth}}\begin{tt}}
-	{\end{tt}\end{tabular}}
-\newenvironment{response}
-	{\vspace{0.2cm}}
-	{\vspace{0.2cm}}
 
-% Title
-\title{Statement on the Revision of $\langle$Paper ID$\rangle$ \\ Based on the Referees' Report}
-\author{Author1 and Author2 and Author3}
+
+% You can get probably get rid of these definitions %
+\newcommand\meta[1]{$\langle\hbox{#1}\rangle$}      %
+\newcommand\PaperTitle[1]{``\textit{#1}''}          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Statement on the Revision of \meta{Paper ID} \\
+  Based on the Referees' Report}
+\author{Author1 \and Author2 \and Author3}
 \date{\today}
 
-% Text
 \begin{document}
+This statement concerns our revision of the \meta{Paper ID} paper,
+entitled \PaperTitle{\meta{Paper Title}}, based on the referees'
+report.
 
-\maketitle
-
-\thispagestyle{empty}
-
-This statement concerns our revision of the $\langle$Paper ID$\rangle$ paper,
-entitled ``\emph{$\langle$Paper Title$\rangle$}'', based on the referees' report.
-
-\section*{Comments by Reviewer \#1}
-
-\begin{comment}
-First comment.
-\end{comment}
-
-\begin{response}
-Response to the first comment.
+\Reviewer{1}
+\begin{response}{First comment.}
+  Response to the first comment.
+\end{response}
+\begin{response}{Second comment.}
+  Response to the second comment.
 \end{response}
 
-\begin{comment}
-Second comment.
-\end{comment}
-
-\begin{response}
-Response to the second comment.
+\Reviewer{2}
+\begin{response}{First comment.}[blue!25]
+  Response to the first comment.
 \end{response}
-
 \end{document}
