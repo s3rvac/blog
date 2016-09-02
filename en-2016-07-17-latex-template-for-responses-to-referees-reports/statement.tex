@@ -27,7 +27,7 @@
 } { \bigskip\par }
 
 \NewDocumentCommand \Reviewer { m } {
-  \section*{Comments~by~Reviewer~\##1}
+  \section*{Comments~by~Reviewer~#1}
 }
 \ExplSyntaxOff
 \AtBeginDocument{\maketitle\thispagestyle{empty}\noindent}
@@ -46,7 +46,7 @@ This statement concerns our revision of the \meta{Paper ID} paper,
 entitled \PaperTitle{\meta{Paper Title}}, based on the referees'
 report.
 
-\Reviewer{1}
+\Reviewer{\#1}
 \begin{response}{First comment.}
   Response to the first comment.
 \end{response}
@@ -54,7 +54,7 @@ report.
   Response to the second comment.
 \end{response}
 
-\Reviewer{2}
+\Reviewer{\#2}
 \begin{response}{First comment.}
   Response to the first comment.
 \end{response}
