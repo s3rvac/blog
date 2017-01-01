@@ -1,0 +1,6 @@
+[package]
+name = "dbscan"
+version = "0.1.0"
+authors = ["Petr Zemek <s3rvac@gmail.com>"]
+license = "BSD-3-Clause"
+description = "Implementation of the DBSCAN clustering algorithm from distance matrix"
