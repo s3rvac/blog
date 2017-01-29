@@ -48,7 +48,7 @@ transClosure g = array ((1, 1), (n, n))
 {-|
     Reads a graph from the standard input.
 
-    Raises IOError if the graph could not be read or
+    Raises ioError if the graph could not be read or
     it is in invalid format.
 -}
 readGraph :: IO Graph
