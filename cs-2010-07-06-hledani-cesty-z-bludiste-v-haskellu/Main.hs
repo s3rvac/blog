@@ -116,7 +116,7 @@ printHelp = do putStrLn helpMsg
     where helpMsg = "Usage: maze\n" ++
                 "\n" ++
                 "Finds a way from S to G in a maze given on the standard\n" ++
-                "input in the folowing text format:\n" ++
+                "input in the following text format:\n" ++
                 "\n" ++
                 "    ######G####\n" ++
                 "    #...#..#.##\n" ++
