@@ -1,0 +1,1 @@
+Source code for my [Vlastní metoda na standardním datovém typu? V Rustu není problém](https://cs-blog.petrzemek.net/2017-02-05-vlastni-metoda-na-standardnim-datovem-typu-v-rustu-neni-problem) Czech blog post.
