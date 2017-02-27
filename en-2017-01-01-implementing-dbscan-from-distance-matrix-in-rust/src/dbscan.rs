@@ -103,16 +103,13 @@ impl<T> DBSCAN<T>
         self.clusters[point] = Some(self.current_cluster);
 
         while let Some(other_point) = neighbors.pop_front() {
-            if self.visited[other_point] {
-                continue;
+            if !self.visited[other_point] {
+                self.visited[other_point] = true;
+                let mut other_neighbors = self.region_query(matrix, other_point);
+                if other_neighbors.len() >= self.min_points {
+                    neighbors.append(&mut other_neighbors);
+                }
             }
-
-            self.visited[other_point] = true;
-            let mut other_neighbors = self.region_query(matrix, other_point);
-            if other_neighbors.len() >= self.min_points {
-                neighbors.append(&mut other_neighbors);
-            }
-
             if self.clusters[other_point].is_none() {
                 self.clusters[other_point] = Some(self.current_cluster);
             }
@@ -171,6 +168,36 @@ mod tests {
         assert_eq!(clustering[2], Some(1));
         assert_eq!(clustering[3], Some(1));
         assert_eq!(clustering[4], None);
+    }
+
+    #[test]
+    fn test_neighboring_points_are_put_into_cluster_even_if_they_have_been_visited() {
+        // In 2D, the points in this test are placed as follows:
+        //
+        //    0
+        //      1
+        //        2
+        //
+        // Epsilon is set to 1 and min_points to 3. When the first point is
+        // checked (0), it is marked as visited. Since it has only a single
+        // neighbor, the two points (0 and 1) cannot form a cluster because
+        // min_points is 3. Then, the algorithm continues to point 1. It has
+        // two neighbors (0 and
+        // 2), so the three points (0, 1, 2) can form a cluster. In this test,
+        // we ensure that even when the first point (0) has already been
+        // marked as visited, it is put into the cluster because it is not
+        // yet a member of any other cluster.
+        let mut dbscan = DBSCAN::new(1, 3);
+        let mut m = SymmetricMatrix::<i8>::new(3);
+        m.set(0, 1, 1);
+        m.set(0, 2, 2);
+        m.set(1, 2, 1);
+
+        let clustering = dbscan.perform_clustering(&m);
+
+        assert_eq!(clustering[0], Some(0));
+        assert_eq!(clustering[1], Some(0));
+        assert_eq!(clustering[2], Some(0));
     }
 
     #[test]
