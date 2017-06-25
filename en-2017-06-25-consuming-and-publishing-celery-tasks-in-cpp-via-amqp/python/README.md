@@ -15,7 +15,7 @@ blog post.
 * `$ python -m venv virtualenv`
 * `$ source virtualenv/bin/activate`
 * `$ python -m pip pip install celery` (or just `$ pip install celery`
-  if the path to the current working directory is [not too
+  if the path to the current working directory [is not too
   long](https://github.com/pypa/pip/issues/1773))
 
 The project was successfully tested with Python 3.6.1, Celery 4.0.2, and
