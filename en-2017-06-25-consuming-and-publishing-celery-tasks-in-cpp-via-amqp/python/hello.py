@@ -12,7 +12,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # By calling hello.delay(), we request hello() to be executed in a worker
-    # rather than executing it directly in the current process, which is what a
-    # direct call to hello() would do.
+    # rather than executed directly in the current process, which is what a
+    # call to hello() would do.
     # http://docs.celeryproject.org/en/latest/userguide/calling.html
     hello.delay(sys.argv[1], int(sys.argv[2]))
