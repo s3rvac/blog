@@ -135,16 +135,15 @@ int main(int argc, char** argv) {
 			// execution).
 			channel->BasicAck(envelope);
 		}
-
-		// When the worker ends, we have to cancel consuming from the queue,
-		// which we started when we called channel->BasicConsume().
-		channel->BasicCancel(consumer_tag);
 	} catch (...) {
 		// Poor man's finally block. Cancel consuming from the queue (see the
-		// note above) and re-throw the exception.
+		// note below this try-catch block) and re-throw the exception.
 		channel->BasicCancel(consumer_tag);
 		throw;
 	}
+	// When the worker ends, we have to cancel consuming from the queue, which
+	// we started when we called channel->BasicConsume().
+	channel->BasicCancel(consumer_tag);
 
 	return 0;
 }
