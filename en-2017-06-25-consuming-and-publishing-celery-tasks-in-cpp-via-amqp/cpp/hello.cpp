@@ -65,12 +65,12 @@ int main(int argc, char** argv) {
 	// Assume UTF-8.
 	msg->ContentEncoding("utf-8");
 
-	// Celery requires two headers: id and task. The former is a UUID string.
-	// The latter has to be the name of the task, as registered in the Python
-	// part.
+	// Celery requires two headers: id and task. The former can be any string
+	// you want (http://docs.celeryproject.org/en/latest/faq.html#can-i-specify-a-custom-task-id),
+	// although Celery uses UUIDs. The latter has to be the name of the task,
+	// as registered in the Python part.
 	//
-	// In a real world scenario, you would probably want generate a random
-	// UUID ;-).
+	// In a real world scenario, you would probably want generate a random ID ;-).
 	msg->HeaderTable({
 		{"id", "3149beef-be66-4b0e-ba47-2fc46e4edac3"},
 		{"task", "tasks.hello"}
