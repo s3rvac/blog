@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
 	// although Celery uses UUIDs. The latter has to be the name of the task,
 	// as registered in the Python part.
 	//
-	// In a real world scenario, you would probably want generate a random ID ;-).
+	// In a real-world scenario, you would probably want generate a random ID ;-).
 	msg->HeaderTable({
 		{"id", "3149beef-be66-4b0e-ba47-2fc46e4edac3"},
 		{"task", "tasks.hello"}
