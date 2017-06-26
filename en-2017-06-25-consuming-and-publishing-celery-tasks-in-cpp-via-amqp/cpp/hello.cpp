@@ -65,8 +65,9 @@ int main(int argc, char** argv) {
 	// Assume UTF-8.
 	msg->ContentEncoding("utf-8");
 
-	// Celery requires two headers: id and task. The former can be any string
-	// you want (http://docs.celeryproject.org/en/latest/faq.html#can-i-specify-a-custom-task-id),
+	// Celery requires two headers: id and task. The former can be any unique
+	// string you want
+	// (http://docs.celeryproject.org/en/latest/faq.html#can-i-specify-a-custom-task-id),
 	// although Celery uses UUIDs. The latter has to be the name of the task,
 	// as registered in the Python part.
 	//
