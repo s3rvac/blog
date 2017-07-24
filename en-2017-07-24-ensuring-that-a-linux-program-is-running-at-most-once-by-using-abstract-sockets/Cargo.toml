@@ -1,0 +1,9 @@
+[package]
+name = "at-most-once"
+version = "0.1.0"
+authors = ["Petr Zemek <s3rvac@gmail.com>"]
+license = "BSD-3-Clause"
+description = "Ensures that a Linux program is running at most once using abstract sockets."
+
+[dependencies]
+nix = "0.8.1"
