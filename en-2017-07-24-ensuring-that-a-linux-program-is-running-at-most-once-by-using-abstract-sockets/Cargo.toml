@@ -6,4 +6,4 @@ license = "BSD-3-Clause"
 description = "Ensures that a Linux program is running at most once using abstract sockets."
 
 [dependencies]
-nix = "0.8.1"
+nix = "0.9.0"
