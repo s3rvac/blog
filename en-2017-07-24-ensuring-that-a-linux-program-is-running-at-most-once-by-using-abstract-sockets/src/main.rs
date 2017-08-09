@@ -23,7 +23,7 @@ use nix::sys::socket::bind;
 use nix::sys::socket::socket;
 
 fn do_work() {
-    // We simulate the work by sleeping.
+    // We simulate the actual work by sleeping.
     // Use e.g. Ctrl-C or SIGTERM to kill the program.
     sleep(Duration::from_secs(3600));
 }
