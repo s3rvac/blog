@@ -14,8 +14,8 @@ int main() {
     A c = {1};      // FAIL (compilation error)
     A d = {1, 2.0}; // FAIL (compilation error)
     // GCC:
-    //   error: could not convert ‘{1}’ from ‘<brace-enclosed initializer list>’ to ‘A’
-    //   error: could not convert ‘{1, 2.0e+0}’ from ‘<brace-enclosed initializer list>’ to ‘A’
+    //   error: could not convert '{1}' from '<brace-enclosed initializer list>' to 'A'
+    //   error: could not convert '{1, 2.0e+0}' from '<brace-enclosed initializer list>' to 'A'
     //
     // Clang:
     //   error: no matching constructor for initialization of 'A'
