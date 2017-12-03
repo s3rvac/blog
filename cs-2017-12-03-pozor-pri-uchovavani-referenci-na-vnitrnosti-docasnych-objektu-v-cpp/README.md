@@ -1,0 +1,1 @@
+Source code for my [Pozor při uchovávání referencí na vnitřnosti dočasných objektů v C++](https://cs-blog.petrzemek.net/2017-12-03-pozor-pri-uchovavani-referenci-na-vnitrnosti-docasnych-objektu-v-cpp) Czech blog post.
