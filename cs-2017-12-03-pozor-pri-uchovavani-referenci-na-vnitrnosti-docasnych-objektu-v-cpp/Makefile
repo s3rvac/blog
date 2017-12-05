@@ -1,7 +1,7 @@
 .PHONY: clean
 
 CXX=g++
-CXXFLAGS=-std=c++14 -Wall -Wextra -O2 -g
+CXXFLAGS=-std=c++14 -pedantic -Wall -Wextra -O2 -g
 
 all: string-incorrect1 string-incorrect2 string-correct vector-incorrect vector-correct
 
