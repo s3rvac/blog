@@ -1,0 +1,10 @@
+[package]
+authors = ["Petr Zemek <s3rvac@gmail.com>"]
+name = "multiprocessing"
+version = "0.1.0"
+license = "BSD-3-Clause"
+description = "A sample implementation of multiprocessing.pool.ThreadPool from Python in Rust."
+
+[dependencies]
+num_cpus = "1.8.0"
+threadpool = "1.7.1"
