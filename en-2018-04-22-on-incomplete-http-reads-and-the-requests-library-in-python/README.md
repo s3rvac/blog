@@ -1,4 +1,4 @@
-Source code for my [On Incomplete HTTP Reads and the Requests Library in Python](https://blog.petrzemek.net/2018/04/22/on-incomplete-http-reads-and-the-requests-library-in-python) English blog post.
+Source code for my [On Incomplete HTTP Reads and the Requests Library In Python](https://blog.petrzemek.net/2018/04/22/on-incomplete-http-reads-and-the-requests-library-in-python) English blog post.
 
 The code is divided into two parts:
 * [servers](https://github.com/s3rvac/blog/tree/master/en-2018-04-22-on-incomplete-http-reads-and-the-requests-library-in-python/servers): Three HTTP servers, each behaving in a slightly different way:
