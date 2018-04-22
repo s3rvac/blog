@@ -1,0 +1,9 @@
+[package]
+authors = ["Petr Zemek <s3rvac@gmail.com>"]
+description = "An HTTP client in Rust for verifying the reading of incomplete responses."
+name = "rust-http-client"
+version = "0.1.0"
+
+[dependencies]
+failure = "0.1.1"
+reqwest = "0.8.5"
