@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# An HTTP server that returns less bytes in the body of the response than
+# An HTTP server that returns fewer bytes in the body of the response than
 # stated in the chunk size when using "Transfer-Encoding: Chunked".
 #
 

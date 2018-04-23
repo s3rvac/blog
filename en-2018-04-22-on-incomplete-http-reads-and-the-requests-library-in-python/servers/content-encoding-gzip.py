@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# An HTTP server that returns less bytes in the body of a gzipped response than
+# An HTTP server that returns fewer bytes in the body of a gzipped response than
 # stated in the Content-Length header.
 #
 
