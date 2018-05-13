@@ -3,7 +3,7 @@
 # An HTTP client that checks that the content of the response has at least
 # Content-Length bytes.
 #
-# For requests 2.x (not needed for requests 3.x).
+# For requests 2.x (should not be needed for requests 3.x).
 #
 
 import requests
