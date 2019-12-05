@@ -1,0 +1,1 @@
+Source code for my [Accidentally Overwriting Another Local Variable in C and C++](https://blog.petrzemek.net/2019/12/05/accidentally-overwriting-another-local-variable-in-c-and-cpp/) English blog post.
